@@ -44,7 +44,8 @@ class Config:  # pylint: disable=too-few-public-methods,too-many-instance-attrib
             "ratio_adjust_weight":"100",
             "auto_adjust_bnb_balance": "false",
             "auto_adjust_bnb_balance_rate": "3",
-            "allow_coin_merge": "true"
+            "allow_coin_merge": "true",
+            "risk_factor": "0.5"
         }
 
         if not os.path.exists(CFG_FL_NAME):
@@ -64,6 +65,9 @@ class Config:  # pylint: disable=too-few-public-methods,too-many-instance-attrib
         # Get config for scout
         self.SCOUT_MULTIPLIER = float(
             os.environ.get("SCOUT_MULTIPLIER") or config.get(USER_CFG_SECTION, "scout_multiplier")
+        )
+        self.RISK_FACTOR = float(
+            os.environ.get("RISK_FACTOR") or config.get(USER_CFG_SECTION, "risk_factor")
         )
         self.SCOUT_SLEEP_TIME = int(
             os.environ.get("SCOUT_SLEEP_TIME") or config.get(USER_CFG_SECTION, "scout_sleep_time")
