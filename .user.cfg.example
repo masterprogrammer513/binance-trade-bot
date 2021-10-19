@@ -22,4 +22,4 @@ max_idle_hours=72
 ratio_adjust_weight=500
 auto_adjust_bnb_balance=false
 auto_adjust_bnb_balance_rate=3
-risk_factor=0.5
+risk_factor=0.6
